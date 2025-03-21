@@ -14,7 +14,7 @@ function logout(){
     currentUser=null;
     window.location.href="login.html";
 }
-document.getElementById("transaction-form")?.addEventListener("submit",function(e){
+document.getElementById("transaction-form").addEventListener("submit",function(e){
     e.preventDefault();
     const date=document.getElementById("date").value;
     const amount=parseFloat(document.getElementById("amount").value);
@@ -31,7 +31,7 @@ function updateTransactionsList(){
     const transactionList=document.getElementById("transaction-list");
     transactionList.innerHTML="";
     let balance=0;
-    transactions.forEach(transaction=>{
+    transactions.forEach((transaction,index) =>{
         const li=document.createElement("li");
         li.textContent=`${transaction.category}:$${transaction.amount}(${transaction.type});`
         const deleteButton=document.createElement("button");
